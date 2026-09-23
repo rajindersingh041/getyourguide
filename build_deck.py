@@ -95,7 +95,7 @@ def chart_waterfall():
             o.append(txt(cx, T + ph + 16 + j * 11, ln, 8.5, MUTED, "middle"))
     # the callout
     hx = L + slot * 1 + slot / 2
-    o.append(txt(hx, T - 14, "+34% — this is the brief's requirement", 9, S1, "middle", 700))
+    o.append(txt(hx, T - 14, f"+{SLA_UPLIFT*100:.0f}% — this is the brief's requirement", 9, S1, "middle", 700))
     return svg(W, H, "".join(o))
 
 
@@ -210,21 +210,34 @@ def chart_conc():
 
 
 def chart_channel_mix():
-    """FTE by channel. 4 categorical slots (validated) + mandatory direct labels."""
+    """FTE by channel. 4 validated categorical slots; every segment direct-labelled
+    (the palette's contrast WARN makes labels mandatory, not optional).
+    Segments too narrow to hold their label get it above the bar instead of
+    clipped inside it."""
     rows = {r["channel"]: r["fte"] for r in D["by_channel"]}
     order = [("Chat", S1), ("Email", S2), ("Inbound", S3), ("Outbound", S4)]
     tot = sum(rows.values())
-    W, H = 500, 74
-    L, R, T = 0, 0, 20
-    pw, bh = W - L - R, 26
-    o = [txt(0, 10, "Where the 484 FTE sits", 8.5, MUTED, "start")]
-    x = L
+    W, H = 500, 96
+    T, bh = 26, 30
+    pw = W
+    o, x = [], 0.0
     for name, col in order:
         w = rows[name] / tot * pw
+        val = f'{rows[name]:.0f}'
         o.append(f'<rect x="{x:.1f}" y="{T}" width="{max(w-2,1):.1f}" height="{bh}" fill="{col}" rx="2"/>')
-        o.append(txt(x + 7, T + 17, f'{rows[name]:.0f}', 11, "#ffffff", "start", 700))
-        o.append(txt(x, T + bh + 14, name, 8.5, INK2, "start", 700))
-        o.append(txt(x, T + bh + 25, f'{rows[name]/tot*100:.0f}%', 8, MUTED, "start"))
+        # a value only goes inside the fill if it actually fits with padding
+        fits = w - 2 >= len(val) * 7.6 + 12
+        if fits:
+            o.append(txt(x + 7, T + 20, val, 12, "#ffffff", "start", 700))
+        else:
+            o.append(txt(min(x + w / 2, W - 10), T - 6, val, 11, INK, "middle", 700))
+            o.append(line(min(x + w / 2, W - 10), T - 3, x + w / 2, T + 4, RULE, 1))
+        # category labels below; the last one right-aligns so it cannot run off
+        last = name == order[-1][0]
+        lx = W if last else x
+        anc = "end" if last else "start"
+        o.append(txt(lx, T + bh + 15, name, 10, INK2, anc, 700))
+        o.append(txt(lx, T + bh + 28, f'{rows[name]/tot*100:.0f}%', 9.5, MUTED, anc))
         x += w
     return svg(W, H, "".join(o))
 
@@ -385,6 +398,17 @@ def slide(n, tag, title, dek, body, total, apx=False):
 </section>"""
 
 
+def clip(text, n):
+    """Truncate on a word boundary with an ellipsis - a mid-word cut reads as a
+    rendering fault, not an editorial choice."""
+    text = str(text)
+    if len(text) <= n:
+        return text
+    cut = text[:n]
+    sp = cut.rfind(" ")
+    return (cut[:sp] if sp > n * 0.6 else cut).rstrip(" ,;:(") + "\u2026"
+
+
 def tile(k, v, s):
     return f'<div class="tile"><div class="k">{k}</div><div class="v">{v}</div><div class="s">{s}</div></div>'
 
@@ -392,6 +416,8 @@ def tile(k, v, s):
 # ================================================================ SLIDES
 B = {(r["scenario"], r["month"]): r for r in D["build"]}
 bj = B[("BASE", "Jul")]
+EN_IN = [r for r in D["queues"] if r["language"] == "English" and r["channel"] == "Inbound"][0]
+SLA_UPLIFT = bj["fte_sla"] / bj["fte_workload_only"] - 1
 POOL = sum(p["fte_saved"] for p in D["pools"])
 CONC = -[r for r in D["conc"] if r["concurrency"] == 2.0][0]["delta_vs_1.2"]
 
@@ -417,7 +443,7 @@ def s1():
     {chart_waterfall()}
     <p class="sm" style="margin-top:4px">A workload model returns <strong>360 FTE</strong> and
       <strong class="crit">misses SLA</strong> — it implicitly assumes 100% occupancy. Erlang C says
-      English inbound runs at <strong>70%</strong>; the idle 30% <em>is</em> the 20-second answer time.</p>
+      English inbound runs at <strong>{EN_IN["occupancy"]*100:.0f}%</strong>; the idle {(1-EN_IN["occupancy"])*100:.0f}% <em>is</em> the 20-second answer time.</p>
   </div>
   <div class="col" style="flex:0 0 30%">
     <h2>Two levers, both from the same evidence</h2>
@@ -447,7 +473,7 @@ def s2():
     rows = "".join(
         f'<tr><td><span class="pill {("pass" if r["status"]=="PASS" else "warn" if r["status"]=="WARN" else "fix")}">'
         f'{"pass" if r["status"]=="PASS" else "warn" if r["status"]=="WARN" else "fix"}</span></td>'
-        f'<td>{esc(r["check"])}</td><td class="mute">{esc(r["finding"][:78])}</td></tr>'
+        f'<td>{esc(r["check"])}</td><td class="mute">{esc(clip(r["finding"], 76))}</td></tr>'
         for r in dq[:7])
     body = f"""
 <div class="row">
@@ -463,8 +489,10 @@ def s2():
       <tr class="tot"><td><strong>+ training class</strong></td><td><strong>paid FTE</strong></td></tr>
     </table>
     <div class="note" style="margin-top:13px">
-      <p class="sm tight"><strong>Erlang C returns seats, not FTE.</strong> 11 concurrent seats × 730 h
-      ÷ 0.82 ÷ 173.33 = <strong>56.5 FTE</strong>, against 38.9 from workload alone on the same queue.</p>
+      <p class="sm tight"><strong>Erlang C returns seats, not FTE.</strong>
+      {int(EN_IN["seats_raw"])} concurrent seats × 730 h ÷ 0.82 ÷ 173.33 =
+      <strong>{EN_IN["fte"]:.1f} FTE</strong>, against {EN_IN["fte_workload_only"]:.1f} from workload
+      alone on the same queue.</p>
     </div>
     <p class="sm mute" style="margin-top:12px">Monthly-average arrival rates make this a <em>floor</em>:
     real intraday peaks and overnight minimum-staffing push interval-level staffing up, never down.</p>
@@ -617,6 +645,7 @@ def s4():
     </table>
   </div>
   <div class="col" style="flex:0 0 33%">
+    <h2>Why it works, and what it costs</h2>
     <p class="sm">All four languages already sit in BPO 3, so this is a routing
     and skilling change, not a vendor change. Both pooled queues were <strong>re-solved through the
     same Erlang engine</strong> — the service level goes up, not down. Phase it: start with the
@@ -896,18 +925,18 @@ def a4():
     lands. The idle time is not waste; it is the product.</p>
     <table style="margin-top:10px">
       <tr><th>English inbound, BASE July</th><th class="n"></th></tr>
-      <tr><td>Contacts</td><td class="n">44,182</td></tr>
-      <tr><td>AHT (BPO1/2 blend)</td><td class="n">457.5 s</td></tr>
-      <tr><td>Workload hours</td><td class="n">5,615</td></tr>
-      <tr><td>Offered load</td><td class="n">7.69 erlangs</td></tr>
-      <tr><td>Seats for 80/20</td><td class="n"><strong>11</strong></td></tr>
-      <tr><td>Achieved service level</td><td class="n good">82.9%</td></tr>
-      <tr><td>Occupancy at 11 seats</td><td class="n accent">69.9%</td></tr>
-      <tr><td class="mute">Workload FTE (÷ shrinkage only)</td><td class="n mute">38.9</td></tr>
-      <tr class="tot"><td>FTE that actually meets SLA</td><td class="n">56.5</td></tr>
+      <tr><td>Contacts</td><td class="n">{EN_IN["contacts"]:,.0f}</td></tr>
+      <tr><td>AHT (BPO1/2 blend)</td><td class="n">{EN_IN["aht"]:.1f} s</td></tr>
+      <tr><td>Workload hours</td><td class="n">{EN_IN["workload_hours"]:,.0f}</td></tr>
+      <tr><td>Offered load</td><td class="n">{EN_IN["erlangs"]:.2f} erlangs</td></tr>
+      <tr><td>Seats for 80/20</td><td class="n"><strong>{int(EN_IN["seats_raw"])}</strong></td></tr>
+      <tr><td>Achieved service level</td><td class="n good">{EN_IN["service_level"]*100:.1f}%</td></tr>
+      <tr><td>Occupancy at {int(EN_IN["seats_raw"])} seats</td><td class="n accent">{EN_IN["occupancy"]*100:.1f}%</td></tr>
+      <tr><td class="mute">Workload FTE (÷ shrinkage only)</td><td class="n mute">{EN_IN["fte_workload_only"]:.1f}</td></tr>
+      <tr class="tot"><td>FTE that actually meets SLA</td><td class="n">{EN_IN["fte"]:.1f}</td></tr>
     </table>
-    <p class="sm" style="margin-top:8px"><strong>+45% on one queue.</strong> Across all ten real-time
-    queues it is +34% on the total — the gap between a plan that hits SLA and one that does not.</p>
+    <p class="sm" style="margin-top:8px"><strong>+{EN_IN["fte"]/EN_IN["fte_workload_only"]*100-100:.0f}%
+    on one queue.</strong> Across all ten real-time queues it is +{SLA_UPLIFT*100:.0f}% on the total — the gap between a plan that hits SLA and one that does not.</p>
   </div>
   <div class="col" style="flex:0 0 33%">
     <h2>Why small queues cost so much more</h2>
@@ -921,7 +950,7 @@ def a4():
       <tr><td>Spanish inbound</td><td class="n">1.14</td><td class="n">3</td><td class="n">38.1%</td></tr>
       <tr><td>German inbound</td><td class="n">1.26</td><td class="n">3</td><td class="n">41.9%</td></tr>
       <tr class="tot"><td>All four, pooled</td><td class="n">4.16</td><td class="n">7</td><td class="n good">59.5%</td></tr>
-      <tr><td>English inbound</td><td class="n">7.69</td><td class="n">11</td><td class="n">69.9%</td></tr>
+      <tr><td>English inbound</td><td class="n">{EN_IN["erlangs"]:.2f}</td><td class="n">{int(EN_IN["seats_raw"])}</td><td class="n">{EN_IN["occupancy"]*100:.1f}%</td></tr>
     </table>
     <p class="sm" style="margin-top:8px">This is the whole argument for Strategy 1, and it is invisible
     to a workload model — which would report these five queues as equally efficient per contact.</p>

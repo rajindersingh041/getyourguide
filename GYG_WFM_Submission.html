@@ -144,8 +144,10 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
       <tr class="tot"><td><strong>+ training class</strong></td><td><strong>paid FTE</strong></td></tr>
     </table>
     <div class="note" style="margin-top:13px">
-      <p class="sm tight"><strong>Erlang C returns seats, not FTE.</strong> 11 concurrent seats × 730 h
-      ÷ 0.82 ÷ 173.33 = <strong>56.5 FTE</strong>, against 38.9 from workload alone on the same queue.</p>
+      <p class="sm tight"><strong>Erlang C returns seats, not FTE.</strong>
+      11 concurrent seats × 730 h ÷ 0.82 ÷ 173.33 =
+      <strong>56.5 FTE</strong>, against 39.5 from workload
+      alone on the same queue.</p>
     </div>
     <p class="sm mute" style="margin-top:12px">Monthly-average arrival rates make this a <em>floor</em>:
     real intraday peaks and overnight minimum-staffing push interval-level staffing up, never down.</p>
@@ -158,7 +160,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
   </div>
   <div class="col" style="flex:0 0 40%">
     <h2>Data quality — 12 checks, every decision logged</h2>
-    <table><tr><td><span class="pill warn">warn</span></td><td>channel rows sum to language total</td><td class="mute">17/30 language-months disagree with their own 'Tot' row; max 2 contacts (0.012</td></tr><tr><td><span class="pill pass">pass</span></td><td>EN CSAT reason tickets tie to Contact Volume English total</td><td class="mute">max |ratio - 1| = 0.00e+00 across 6 months (ratios 1.000000, 1.000000, 1.00000</td></tr><tr><td><span class="pill fix">fix</span></td><td>CSAT reported against zero tickets</td><td class="mute">3 reason-months carry a CSAT score with 0 tickets (e.g. 18.2. Positive feedbac</td></tr><tr><td><span class="pill fix">fix</span></td><td>reason label missing</td><td class="mute">one reason row has a blank label carrying 3,729 tickets (0.63% of English volu</td></tr><tr><td><span class="pill fix">fix</span></td><td>AHT outliers vs reason median</td><td class="mute">1 reason-months outside 0.5x-2.0x their own median; worst: 1.4. Pricing June =</td></tr><tr><td><span class="pill warn">warn</span></td><td>channel pair Inbound == Outbound</td><td class="mute">identical in 29/30 language-months</td></tr><tr><td><span class="pill warn">warn</span></td><td>channel pair Email == Chat</td><td class="mute">identical in 23/30 language-months</td></tr></table>
+    <table><tr><td><span class="pill warn">warn</span></td><td>channel rows sum to language total</td><td class="mute">17/30 language-months disagree with their own 'Tot' row; max 2 contacts…</td></tr><tr><td><span class="pill pass">pass</span></td><td>EN CSAT reason tickets tie to Contact Volume English total</td><td class="mute">max |ratio - 1| = 0.00e+00 across 6 months (ratios 1.000000, 1.000000…</td></tr><tr><td><span class="pill fix">fix</span></td><td>CSAT reported against zero tickets</td><td class="mute">3 reason-months carry a CSAT score with 0 tickets (e.g. 18.2. Positive…</td></tr><tr><td><span class="pill fix">fix</span></td><td>reason label missing</td><td class="mute">one reason row has a blank label carrying 3,729 tickets (0.63% of English…</td></tr><tr><td><span class="pill fix">fix</span></td><td>AHT outliers vs reason median</td><td class="mute">1 reason-months outside 0.5x-2.0x their own median; worst: 1.4. Pricing…</td></tr><tr><td><span class="pill warn">warn</span></td><td>channel pair Inbound == Outbound</td><td class="mute">identical in 29/30 language-months</td></tr><tr><td><span class="pill warn">warn</span></td><td>channel pair Email == Chat</td><td class="mute">identical in 23/30 language-months</td></tr></table>
     <p class="sm" style="margin-top:9px"><strong>The validation that passed matters most:</strong>
     the per-reason ticket counts tie to the English contact volume in all six months at a ratio of
     <strong>exactly 1.000000</strong> — so the two sheets describe the same population and the
@@ -276,6 +278,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
     </table>
   </div>
   <div class="col" style="flex:0 0 33%">
+    <h2>Why it works, and what it costs</h2>
     <p class="sm">All four languages already sit in BPO 3, so this is a routing
     and skilling change, not a vendor change. Both pooled queues were <strong>re-solved through the
     same Erlang engine</strong> — the service level goes up, not down. Phase it: start with the
@@ -419,7 +422,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
   </table>
   </div>
   <div class="col" style="flex:0 0 32%">
-    <h2>Where the 484 FTE sits</h2><svg class="chart" viewBox="0 0 500 74" width="100%" preserveAspectRatio="xMidYMid meet" role="img"><text x="0.0" y="10.0" font-size="8.5" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">Where the 484 FTE sits</text><rect x="0.0" y="20" width="192.4" height="26" fill="#2a78d6" rx="2"/><text x="7.0" y="37.0" font-size="11" fill="#ffffff" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">188</text><text x="0.0" y="60.0" font-size="8.5" fill="#52514e" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">Chat</text><text x="0.0" y="71.0" font-size="8" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">39%</text><rect x="194.4" y="20" width="162.0" height="26" fill="#eb6834" rx="2"/><text x="201.4" y="37.0" font-size="11" fill="#ffffff" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">159</text><text x="194.4" y="60.0" font-size="8.5" fill="#52514e" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">Email</text><text x="194.4" y="71.0" font-size="8" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">33%</text><rect x="358.5" y="20" width="120.0" height="26" fill="#1baf7a" rx="2"/><text x="365.5" y="37.0" font-size="11" fill="#ffffff" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">118</text><text x="358.5" y="60.0" font-size="8.5" fill="#52514e" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">Inbound</text><text x="358.5" y="71.0" font-size="8" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">24%</text><rect x="480.4" y="20" width="17.6" height="26" fill="#eda100" rx="2"/><text x="487.4" y="37.0" font-size="11" fill="#ffffff" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">19</text><text x="480.4" y="60.0" font-size="8.5" fill="#52514e" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">Outbound</text><text x="480.4" y="71.0" font-size="8" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">4%</text></svg>
+    <h2>Where the 484 FTE sits</h2><svg class="chart" viewBox="0 0 500 96" width="100%" preserveAspectRatio="xMidYMid meet" role="img"><rect x="0.0" y="26" width="192.4" height="30" fill="#2a78d6" rx="2"/><text x="7.0" y="46.0" font-size="12" fill="#ffffff" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">188</text><text x="0.0" y="71.0" font-size="10" fill="#52514e" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">Chat</text><text x="0.0" y="84.0" font-size="9.5" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">39%</text><rect x="194.4" y="26" width="162.0" height="30" fill="#eb6834" rx="2"/><text x="201.4" y="46.0" font-size="12" fill="#ffffff" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">159</text><text x="194.4" y="71.0" font-size="10" fill="#52514e" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">Email</text><text x="194.4" y="84.0" font-size="9.5" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">33%</text><rect x="358.5" y="26" width="120.0" height="30" fill="#1baf7a" rx="2"/><text x="365.5" y="46.0" font-size="12" fill="#ffffff" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">118</text><text x="358.5" y="71.0" font-size="10" fill="#52514e" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">Inbound</text><text x="358.5" y="84.0" font-size="9.5" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">24%</text><rect x="480.4" y="26" width="17.6" height="30" fill="#eda100" rx="2"/><text x="490.0" y="20.0" font-size="11" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">19</text><line x1="490.0" y1="23.0" x2="490.2" y2="30.0" stroke="#c3c2b7" stroke-width="1" opacity="1"/><text x="500.0" y="71.0" font-size="10" fill="#52514e" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">Outbound</text><text x="500.0" y="84.0" font-size="9.5" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">4%</text></svg>
     <p class="sm" style="margin-top:10px"><strong>Chat is the single largest line at 39%</strong>,
     which is why concurrency is the biggest available lever.</p>
     <p class="sm"><strong>Outbound is 4%</strong> despite carrying a quarter of all contacts — its AHT
@@ -518,13 +521,13 @@ own materiality, so the reader can see which findings were acted on and which we
       <tr><td>Workload hours</td><td class="n">5,615</td></tr>
       <tr><td>Offered load</td><td class="n">7.69 erlangs</td></tr>
       <tr><td>Seats for 80/20</td><td class="n"><strong>11</strong></td></tr>
-      <tr><td>Achieved service level</td><td class="n good">82.9%</td></tr>
+      <tr><td>Achieved service level</td><td class="n good">82.6%</td></tr>
       <tr><td>Occupancy at 11 seats</td><td class="n accent">69.9%</td></tr>
-      <tr><td class="mute">Workload FTE (÷ shrinkage only)</td><td class="n mute">38.9</td></tr>
+      <tr><td class="mute">Workload FTE (÷ shrinkage only)</td><td class="n mute">39.5</td></tr>
       <tr class="tot"><td>FTE that actually meets SLA</td><td class="n">56.5</td></tr>
     </table>
-    <p class="sm" style="margin-top:8px"><strong>+45% on one queue.</strong> Across all ten real-time
-    queues it is +34% on the total — the gap between a plan that hits SLA and one that does not.</p>
+    <p class="sm" style="margin-top:8px"><strong>+43%
+    on one queue.</strong> Across all ten real-time queues it is +34% on the total — the gap between a plan that hits SLA and one that does not.</p>
   </div>
   <div class="col" style="flex:0 0 33%">
     <h2>Why small queues cost so much more</h2>
