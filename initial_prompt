@@ -1,0 +1,66 @@
+I have received this case study from get your guide which we need to solve in 2 hour.
+
+I have already spent some time to understand the data which is an excel file
+
+I am writing here my understanding and you can flag if it is correct or needs improvement
+
+We have excel file which different sheets information about
+1. Why customers are contacting the customer care and no of tickets by reason for english
+	I have noticed couple of things here, 0 ticket but still CSAT is there so we need to fix this maybe it is a input data issue, we can either fix it by taking csat 0 or subsite by avg of weight csat.
+
+2. we have average handling time of ticket by contact reason
+3. we have how customers have contacted i.e. by channel mix. Important thing here is that we don’t have contact reason for other lang like spainish/german/italian …. we need to think how to work with that
+4. We have shrinkage with lang, time category and bro and %, it will be useful to calc the producitivy hours of fte
+5. aht assumptions by bpo and lang: it is important it may have combination which may not actually be there like eng in bpo3 is not allowed as mentioned by other information tab
+6. other information has very important details about new vs old customer support, attribtion, new agent learning curve etc
+
+
+Now the objective is there in pdf file for task 1 and task 2
+you can read the documentation from here about jd: http://localhost:8787/jobs/4443386889
+
+I have to show many skills here, forecasting, planning, scalability, AI usage, how will put this in production, can I put this project in production on my website rajindersingh.tech. We need to do automation also, such that any data is given in similar format and we can run the plan 
+
+I need step by step method, how we will solve these task 1 and task2
+what I noticed that we have high variance in customer tickets like ranging from 48k to 158k so it is not very straightforward problem
+
+
+=====================================================================
+CONSTRAINTS & CONFIRMED UNDERSTANDING (added after data review)
+=====================================================================
+
+HARD CONSTRAINT: Do NOT use the hidden sheet. The workbook has 7 sheets,
+of which 1 is HIDDEN:
+  - visible:  EN CSAT, EN AHT by Contact reason, Contact Volume , Shrinkage,
+              AHT Assumptions by BPO and lang, Other information
+  - HIDDEN :  'CSAT'   <-- EXCLUDE THIS. Only use the 6 visible sheets.
+  (There are 2 CSAT-ish sheets: 'EN CSAT' is visible and usable; 'CSAT' is
+   hidden and must be ignored.)
+
+Confirmations of my understanding (correct unless noted):
+1. EN CSAT: reason-level ticket counts + CSAT for English only, Jan-Jun.
+   - CONFIRMED anomaly: "18.2. Positive feedback" row has 0 tickets but CSAT
+     values present. Also one row has a blank/NaN reason label (735 tix Jan).
+   - FIX: for CSAT reporting, null out CSAT where tickets==0. For the WFM
+     capacity model CSAT is NOT an input at all, so low priority.
+2. EN AHT by Contact reason: English reason-level AHT (seconds). CONFIRMED.
+   - Extra anomaly spotted: some AHT values are placeholders/outliers
+     (e.g. 1.4 Pricing June = 271s vs ~860-2046 elsewhere).
+3. Contact Volume: per language x channel, Jan-Jun. CONFIRMED.
+   - CONFIRMED: only English has reason-level detail; other langs are
+     channel-level only (Email/Inbound/Outbound/Chat). Channel sum == Total.
+   - NEW anomaly: Outbound Phone == Inbound Phone for German/Italian/Spanish/
+     French (and English except April). Likely copied data -> flag & decide.
+4. Shrinkage: language x time-category x BPO. Tot Shrink = 18% everywhere.
+   BPO3 has a 'Projects' category (0%), BPO1/2 do not. Use for productive hrs.
+5. AHT Assumptions by BPO and lang: channel AHT per BPO. CONFIRMED anomaly:
+   BPO1/2 = English only; BPO3 = German/Italian/French/Spanish only. So the
+   rows "BPO3-English" and "BPO1/2-non-English" are IMPOSSIBLE -> exclude.
+6. Other information (key): FTE=40h/wk; learning curve 120%/110%/105% AHT
+   months 1-3; SLA phone 80%/20s, chat 80%/60s, email 80%/120min; 24/7 ops;
+   cost per productive hour; 36% annual attrition; 4 weeks training.
+
+Open decisions to make (see PLAN.md):
+  - English BPO split (BPO1 vs BPO2) is unspecified.
+  - Outbound==Inbound anomaly handling.
+  - Forecast method given the 48k->158k variance.
+
