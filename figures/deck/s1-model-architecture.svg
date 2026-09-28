@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="chart" viewBox="0 0 300 268" width="100%" preserveAspectRatio="xMidYMid meet" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" class="chart" viewBox="0 0 300 268" preserveAspectRatio="xMidYMid meet" role="img">
       <rect x="6" y="6" width="138" height="30" rx="4" fill="#f2f2ef"/>
       <text x="75" y="21" font-size="9" fill="#0b0b0b" text-anchor="middle" font-weight="700">Email + Outbound</text>
       <text x="75" y="31.5" font-size="7" fill="#898781" text-anchor="middle" font-weight="700" letter-spacing="0.08em">DEFERRED</text>

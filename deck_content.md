@@ -1,4 +1,4 @@
-order: s1, s2, s3, s4, s5, a1, a2, a3, a4, a5, a6
+order: s1, s3, s2, s4, s5, a1, a2, a3, a4, a5, a6
 
 <!--
 GYG WFM deck — content source.
@@ -60,7 +60,7 @@ apx: false
 </div>
 <div class="note red" style="margin-top:16px">
   <h3>One number needs an owner <span class="crit">±78 FTE</span></h3>
-  <p class="sm tight">AHT assumption (709.8s, 4 channels) and Apr–Jun actuals (908.8s, ticket reasons) agree within 1% once outbound is excluded from both — <strong>this isn't AHT drift.</strong> The real question: is outbound English volume real? It mirrors inbound in 29/30 months. <strong>508 vs 585 FTE</strong>, unresolvable without an owner for outbound.</p>
+  <p class="sm tight">The workbook gives two English handle times: <strong>710s</strong> including outbound calls, <strong>909s</strong> without. That looks like drift — <strong>it isn't:</strong> compared channel-for-channel they agree within 1%. The real question is whether outbound volume is even real — it's nearly identical to inbound in 29 of 30 months, the signature of a copied column, not a measured one. Real or not swings the plan <strong>508 vs 585 FTE</strong>, a call for whoever owns outbound.</p>
 </div>
 <p class="xs mute" style="margin-top:10px">Full scenario range (LOW/HIGH) and the P10–P90 confidence band are in the appendix (A3).</p>
 
@@ -72,12 +72,12 @@ apx: false
 ---col:30%---
 <h2 style="font-size:14px; color:#0b0b0b">Model architecture — one chain, two paths in</h2>
 <img class="chart" src="figures/deck/s1-model-architecture.svg" alt="chart" style="aspect-ratio:300/268">
-<p class="xs mute" style="margin-top:6px">Two paths — deferred (workload) and real-time (Erlang C) — merge before shrinkage. Same chain, every language. Full formula and constants on slide 02.</p>
+<p class="xs mute" style="margin-top:6px">Two paths — deferred (workload) and real-time (Erlang C) — merge before shrinkage. Same chain, every language. Full formula and constants on slide 03.</p>
 
 ===end===
 
 ===s2===
-tag: 02 · Method
+tag: 03 · Method
 title: How the number is built — and what the data would not tell us
 dek: 
 apx: false
@@ -175,7 +175,7 @@ apx: false
 ===end===
 
 ===s3===
-tag: 03 · Task 1a — Capacity forecast
+tag: 02 · Task 1a — Capacity forecast
 title: Forecast, capacity and the range around it
 dek: 
 apx: false
@@ -183,8 +183,9 @@ apx: false
 ---col:46%---
 <h2 style="font-size:14px; color:#0b0b0b">Volume — six months of actuals, three of forecast</h2>
 <img class="chart" src="figures/deck/s3-volume-fan.svg" alt="chart" style="aspect-ratio:376/252">
-<p class="sm" style="margin-top:6px"><strong>The baseline is June, not an average.</strong> March jumps 1.6–2.1× across all five languages, every channel and all 49 reason codes at once — the signature of a system or reporting change, not real demand. We anchor on post-break months only.</p>
-<p class="sm"><strong>BASE holds Jul–Sep flat</strong> — not a claim that demand is flat, but a refusal to invent a summer curve from six months that include a level shift. HIGH is the summer-peak case; slide 5 has the trigger to switch to it.</p>
+<p class="sm" style="margin-top:5px">March is a <span class="crit">structural break</span>, not seasonality — anchor the baseline on June, post-break. <strong>BASE</strong> holds Jul–Sep flat; <strong>HIGH</strong> carries English's own 3-month trend forward.</p>
+<h2 style="margin-top:4px; font-size:14px; color:#0b0b0b">Only English is growing</h2>
+<img class="chart" src="figures/deck/a3-per-language-trend.svg" alt="chart" style="aspect-ratio:820/150; width:58%; height:auto; margin-top:2px">
 
 ---col:27%---
 <h2 style="font-size:14px; color:#0b0b0b">Capacity by language — BASE, per month</h2>
@@ -195,41 +196,47 @@ apx: false
     <th class="n">Prod h</th>
     <th class="n">Workload<br>FTE</th>
     <th class="n">SLA<br>FTE</th>
+    <th class="n">Paid<br>FTE</th>
   </tr>
   <tr>
     <td><strong>English</strong></td>
     <td class="n">174,128</td>
     <td class="n">40,298</td>
     <td class="n">242</td>
-    <td class="n"><strong>284</strong></td>
+    <td class="n">284</td>
+    <td class="n"><strong>297</strong></td>
   </tr>
   <tr>
     <td><strong>German</strong></td>
     <td class="n">36,135</td>
     <td class="n">8,220</td>
     <td class="n">36</td>
-    <td class="n"><strong>58</strong></td>
+    <td class="n">58</td>
+    <td class="n"><strong>61</strong></td>
   </tr>
   <tr>
     <td><strong>Spanish</strong></td>
     <td class="n">32,879</td>
     <td class="n">7,133</td>
     <td class="n">31</td>
-    <td class="n"><strong>50</strong></td>
+    <td class="n">50</td>
+    <td class="n"><strong>53</strong></td>
   </tr>
   <tr>
     <td><strong>French</strong></td>
     <td class="n">26,662</td>
     <td class="n">6,773</td>
     <td class="n">26</td>
-    <td class="n"><strong>48</strong></td>
+    <td class="n">48</td>
+    <td class="n"><strong>50</strong></td>
   </tr>
   <tr>
     <td><strong>Italian</strong></td>
     <td class="n">24,066</td>
     <td class="n">6,402</td>
     <td class="n">25</td>
-    <td class="n"><strong>45</strong></td>
+    <td class="n">45</td>
+    <td class="n"><strong>47</strong></td>
   </tr>
   <tr class="tot">
     <td>Total</td>
@@ -237,9 +244,11 @@ apx: false
     <td class="n">68,827</td>
     <td class="n">360</td>
     <td class="n">484</td>
+    <td class="n">508</td>
   </tr>
 </table>
-<h2 style="margin-top:16px; font-size:14px; color:#0b0b0b">By BPO — vendor split</h2>
+<p class="xs mute" style="margin-top:4px">SLA → Paid adds the same learning-curve and attrition-backfill steps as the slide 1 waterfall, applied per language.</p>
+<h2 style="margin-top:12px; font-size:14px; color:#0b0b0b">By BPO — vendor split</h2>
 <table>
   <tr>
     <th>BPO</th>
@@ -266,7 +275,7 @@ apx: false
     <td class="n">20,149</td>
   </tr>
 </table>
-<p class="xs mute" style="margin-top:6px">English AHT is the BPO1/BPO2 50/50 blend, so total capacity does not depend on how English is split between the two vendors.</p>
+<p class="xs mute" style="margin-top:6px">The 50/50 English split is <span class="crit">assumed, not in the brief</span> — English AHT is the BPO1/BPO2 blend either way, so total capacity is split-agnostic, but the per-vendor bill above isn't.</p>
 
 ---col:27%---
 <h2 style="font-size:14px; color:#0b0b0b">Scenarios — paid FTE</h2>
@@ -277,13 +286,6 @@ apx: false
     <th class="n">Aug</th>
     <th class="n">Sep</th>
     <th class="n">Basis</th>
-  </tr>
-  <tr>
-    <td><strong>LOW</strong></td>
-    <td class="n">462</td>
-    <td class="n">462</td>
-    <td class="n">462</td>
-    <td class="n mute">June run-rate, no uplift</td>
   </tr>
   <tr>
     <td><strong>BASE</strong></td>
@@ -297,7 +299,7 @@ apx: false
     <td class="n">518</td>
     <td class="n">551</td>
     <td class="n">579</td>
-    <td class="n mute">English on trend × 1.10</td>
+    <td class="n mute">English on 3-mo trend × 1.10; other languages June × 1.10</td>
   </tr>
 </table>
 <img class="chart" src="figures/deck/s3-confidence-band.svg" alt="chart" style="aspect-ratio:228/124">
@@ -315,7 +317,7 @@ dek:
 apx: false
 
 ---col:40%---
-<h2 style="font-size:13px; color:#0b0b0b">Strategy 1 · Pool the four non-English queues <span class="accent">−51.4 FTE (10%)</span></h2>
+<h2 style="font-size:13px; color:#0b0b0b">Strategy 1 · Pool the four non-English queues <span class="accent">−51.4 FTE now (10%)</span></h2>
 <img class="chart" src="figures/deck/s4-occupancy-pooling.svg" alt="chart" style="aspect-ratio:560/234">
 <p class="sm" style="margin-top:12px"><strong>The occupancy column is the finding.</strong> Those queues are not idle by choice — 80/20 on a queue of 0.84 erlangs, staffed 24/7, needs 3 seats no matter how few calls arrive. <strong>Four small queues pay that floor four times.</strong></p>
 <table style="margin-top:10px">
@@ -346,6 +348,10 @@ apx: false
     <td class="n">51.4</td>
   </tr>
 </table>
+<div class="note" style="margin-top:9px">
+  <h3>Phase 2 · Pool English in too <span class="accent">+27.4 FTE more</span></h3>
+  <p class="sm tight">Same mechanism, wider pool, re-solved the same way: <strong>Inbound</strong> 23→16 seats (+10.3 FTE), <strong>Chat</strong> 37→28 seats (+17.1 FTE) — both still clear 80%. The catch: English sits in BPO 1/2, the other four in BPO 3, so this is <strong>vendor consolidation</strong>, not a routing change — a bigger lift than phase 1, worth <strong>−78.8 FTE (15.5%)</strong> total if it clears that bar.</p>
+</div>
 
 ---col:33%---
 <h2 style="font-size:14px; color:#0b0b0b">Why it works, and what it costs</h2>
@@ -482,7 +488,7 @@ apx: false
 ===a1===
 tag: Appendix A1
 title: Every queue, end to end — BASE, July
-dek: The full working behind slide 3. Occupancy below 100% on the Erlang rows is the cost of the service level.
+dek: The full working behind slide 2. Occupancy below 100% on the Erlang rows is the cost of the service level.
 apx: true
 
 ---col:68%---
@@ -856,7 +862,7 @@ apx: true
 ===a2===
 tag: Appendix A2
 title: Data-quality log — all 12 checks
-dek: Condensed to five rows on slide 2. This is the full log, including the checks that passed.
+dek: Condensed to five rows on slide 3. This is the full log, including the checks that passed.
 apx: true
 
 ---full---
@@ -1386,7 +1392,7 @@ apx: true
 </div>
 <p class="sm" style="margin-top:12px"><strong>Why this belongs in the submission.</strong> A forecast is a number somebody staffs against. The useful question is not "is it right?" but "what would have to be true for it to be wrong, and did you check?" Every figure in this deck is generated by the model — the deck reads the model's own output, so the two cannot drift apart.</p>
 <div class="note" style="margin-top:12px">
-  <p class="sm tight"><strong>The honest limit.</strong> Verification proves the model computes what it claims. It cannot prove the inputs are right — and two of them are not yet settled. That is why the two open questions carry FTE price tags on slide 2 rather than being quietly resolved by assumption.</p>
+  <p class="sm tight"><strong>The honest limit.</strong> Verification proves the model computes what it claims. It cannot prove the inputs are right — and two of them are not yet settled. That is why the two open questions carry FTE price tags on slide 3 rather than being quietly resolved by assumption.</p>
 </div>
 
 ===end===
