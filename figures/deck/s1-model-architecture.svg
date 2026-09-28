@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="chart" viewBox="0 0 300 268" width="100%" preserveAspectRatio="xMidYMid meet" role="img">
+      <rect x="6" y="6" width="138" height="30" rx="4" fill="#f2f2ef"/>
+      <text x="75" y="21" font-size="9" fill="#0b0b0b" text-anchor="middle" font-weight="700">Email + Outbound</text>
+      <text x="75" y="31.5" font-size="7" fill="#898781" text-anchor="middle" font-weight="700" letter-spacing="0.08em">DEFERRED</text>
+      <rect x="156" y="6" width="138" height="30" rx="4" fill="#f2f2ef"/>
+      <text x="225" y="21" font-size="9" fill="#0b0b0b" text-anchor="middle" font-weight="700">Inbound + Chat</text>
+      <text x="225" y="31.5" font-size="7" fill="#2a78d6" text-anchor="middle" font-weight="700" letter-spacing="0.08em">REAL-TIME</text>
+      <line x1="75" y1="36" x2="75" y2="46" stroke="#c3c2b7" stroke-width="1.2"/>
+      <line x1="225" y1="36" x2="225" y2="46" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="6" y="46" width="138" height="36" rx="4" fill="#d9d8d2"/>
+      <text x="75" y="63" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="700">÷ occupancy (85%)</text>
+      <text x="75" y="75" font-size="7" fill="#52514e" text-anchor="middle">seat-equiv. hours</text>
+      <rect x="156" y="46" width="138" height="36" rx="4" fill="#cde2fb"/>
+      <text x="225" y="60" font-size="8" fill="#0b0b0b" text-anchor="middle" font-weight="700">Erlang C — 80/20s, 80/60s</text>
+      <text x="225" y="72" font-size="7" fill="#1c5cab" text-anchor="middle">&rarr; seats &times; 730h/mo</text>
+      <line x1="75" y1="82" x2="150" y2="96" stroke="#c3c2b7" stroke-width="1.2"/>
+      <line x1="225" y1="82" x2="150" y2="96" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="40" y="96" width="220" height="28" rx="4" fill="#d9d8d2"/>
+      <text x="150" y="114" font-size="9.5" fill="#0b0b0b" text-anchor="middle" font-weight="700">÷ shrinkage (18%)</text>
+      <line x1="150" y1="124" x2="150" y2="134" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="40" y="134" width="220" height="34" rx="4" fill="#d9d8d2"/>
+      <text x="150" y="150" font-size="9" fill="#0b0b0b" text-anchor="middle" font-weight="700">÷ 173.33 h per FTE</text>
+      <text x="150" y="163" font-size="10" fill="#2a78d6" text-anchor="middle" font-weight="700">&rarr; 484 FTE, SLA-met</text>
+      <line x1="150" y1="168" x2="150" y2="178" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="40" y="178" width="220" height="30" rx="4" fill="#d9d8d2"/>
+      <text x="150" y="192" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="700">÷ tenure-blend (0.989)</text>
+      <text x="150" y="203" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="700">+ 4-week training class</text>
+      <line x1="150" y1="208" x2="150" y2="218" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="40" y="218" width="220" height="42" rx="5" fill="#2a78d6"/>
+      <text x="150" y="235" font-size="7.5" fill="#fcfcfb" text-anchor="middle" font-weight="700" letter-spacing="0.1em">PAID FTE — THE BILL</text>
+      <text x="150" y="254" font-size="18" fill="#fcfcfb" text-anchor="middle" font-weight="700">508</text>
+    </svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" width="860" height="440" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="860" height="440" fill="#fcfcfb"/>
+<text x="64" y="34" font-size="18" font-weight="600" fill="#0b0b0b">From workload to paid headcount: 360 → 508 FTE</text>
+<text x="64" y="56" font-size="13" fill="#52514e">BASE scenario, July (Aug and Sep identical). All 5 languages.</text>
+<rect x="64" y="68" width="12" height="12" rx="2" fill="#6b6a66"/>
+<text x="82" y="78.5" font-size="12" fill="#52514e">Subtotal</text>
+<rect x="141.2" y="68" width="12" height="12" rx="2" fill="#2a78d6"/>
+<text x="159.2" y="78.5" font-size="12" fill="#52514e">Added requirement</text>
+<line x1="64" x2="836" y1="370.0" y2="370.0" stroke="#e6e5e0" stroke-width="1"/>
+<text x="56" y="374.0" font-size="11" fill="#8a8983" text-anchor="end">0</text>
+<line x1="64" x2="836" y1="323.7" y2="323.7" stroke="#e6e5e0" stroke-width="1"/>
+<text x="56" y="327.7" font-size="11" fill="#8a8983" text-anchor="end">100</text>
+<line x1="64" x2="836" y1="277.3" y2="277.3" stroke="#e6e5e0" stroke-width="1"/>
+<text x="56" y="281.3" font-size="11" fill="#8a8983" text-anchor="end">200</text>
+<line x1="64" x2="836" y1="231.0" y2="231.0" stroke="#e6e5e0" stroke-width="1"/>
+<text x="56" y="235.0" font-size="11" fill="#8a8983" text-anchor="end">300</text>
+<line x1="64" x2="836" y1="184.7" y2="184.7" stroke="#e6e5e0" stroke-width="1"/>
+<text x="56" y="188.7" font-size="11" fill="#8a8983" text-anchor="end">400</text>
+<line x1="64" x2="836" y1="138.3" y2="138.3" stroke="#e6e5e0" stroke-width="1"/>
+<text x="56" y="142.3" font-size="11" fill="#8a8983" text-anchor="end">500</text>
+<line x1="64" x2="836" y1="92.0" y2="92.0" stroke="#e6e5e0" stroke-width="1"/>
+<text x="56" y="96.0" font-size="11" fill="#8a8983" text-anchor="end">600</text>
+<line x1="64" x2="836" y1="370.0" y2="370.0" stroke="#8a8983" stroke-width="1"/>
+<rect x="88.3" y="203.1" width="61.8" height="166.9" rx="3" fill="#6b6a66"/>
+<text x="119.1" y="196.1" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">360.2</text>
+<text x="119.1" y="390.0" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="middle">Workload only</text>
+<text x="119.1" y="406.0" font-size="11" fill="#52514e" text-anchor="middle">100% busy</text>
+<rect x="198.5" y="145.7" width="61.8" height="57.5" rx="3" fill="#2a78d6"/>
+<line x1="150.0" x2="198.5" y1="203.1" y2="203.1" stroke="#8a8983" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="229.4" y="138.7" font-size="13" font-weight="500" fill="#0b0b0b" text-anchor="middle">+124.0</text>
+<text x="229.4" y="390.0" font-size="12" font-weight="500" fill="#0b0b0b" text-anchor="middle">+ SLA (Erlang C)</text>
+<text x="229.4" y="406.0" font-size="11" fill="#52514e" text-anchor="middle">idle time for SLA</text>
+<rect x="308.8" y="145.7" width="61.8" height="224.3" rx="3" fill="#6b6a66"/>
+<line x1="260.3" x2="308.8" y1="145.7" y2="145.7" stroke="#8a8983" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="339.7" y="138.7" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">484.2</text>
+<text x="339.7" y="390.0" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="middle">SLA-met FTE</text>
+<rect x="419.1" y="143.1" width="61.8" height="2.5" rx="3" fill="#2a78d6"/>
+<line x1="370.6" x2="419.1" y1="145.7" y2="145.7" stroke="#8a8983" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="450.0" y="136.1" font-size="13" font-weight="500" fill="#0b0b0b" text-anchor="middle">+5.5</text>
+<text x="450.0" y="390.0" font-size="12" font-weight="500" fill="#0b0b0b" text-anchor="middle">+ Learning curve</text>
+<text x="450.0" y="406.0" font-size="11" fill="#52514e" text-anchor="middle">÷ 0.9889 tenure blend</text>
+<rect x="529.4" y="143.1" width="61.8" height="226.9" rx="3" fill="#6b6a66"/>
+<line x1="480.9" x2="529.4" y1="143.1" y2="143.1" stroke="#8a8983" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="560.3" y="136.1" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">489.7</text>
+<text x="560.3" y="390.0" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="middle">On-floor FTE</text>
+<rect x="639.7" y="134.8" width="61.8" height="8.3" rx="3" fill="#2a78d6"/>
+<line x1="591.2" x2="639.7" y1="143.1" y2="143.1" stroke="#8a8983" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="670.6" y="127.8" font-size="13" font-weight="500" fill="#0b0b0b" text-anchor="middle">+17.9</text>
+<text x="670.6" y="390.0" font-size="12" font-weight="500" fill="#0b0b0b" text-anchor="middle">+ In training</text>
+<text x="670.6" y="406.0" font-size="11" fill="#52514e" text-anchor="middle">4-week class, 3.65%/mo</text>
+<rect x="750.0" y="134.8" width="61.8" height="235.2" rx="3" fill="#6b6a66"/>
+<line x1="701.5" x2="750.0" y1="134.8" y2="134.8" stroke="#8a8983" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="780.9" y="127.8" font-size="13" font-weight="600" fill="#0b0b0b" text-anchor="middle">507.6</text>
+<text x="780.9" y="390.0" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="middle">Paid FTE</text>
+<text x="780.9" y="406.0" font-size="11" fill="#52514e" text-anchor="middle">the bill</text>
+</svg>

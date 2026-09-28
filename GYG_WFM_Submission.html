@@ -84,47 +84,70 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
   <div class="body">
 <div class="row">
   <div class="col" style="flex:0 0 30%">
-    <h2>The answer — July to September</h2>
-    <div class="hero"><span class="n">508</span><span class="u">paid<br>FTE</span></div>
-    <p class="sm" style="margin-top:9px">per month to hold <strong>80% / 20s</strong> phone and
+    <h2 style="font-size:14px; color:#0b0b0b">The answer — July to September</h2>
+    <div class="hero"><span class="n">508</span><span class="u">paid FTE<br>per month</span></div>
+    <p class="sm" style="margin-top:9px">To hold <strong>80% / 20s</strong> phone and
       <strong>80% / 60s</strong> chat at the June run-rate <strong>+10%</strong> seasonal uplift.</p>
     <div class="g2" style="margin-top:14px; gap:14px">
       <div class="tile"><div class="k">Productive hours</div><div class="v">68,827</div><div class="s">per month — the BPO bill</div></div>
       <div class="tile"><div class="k">Contacts</div><div class="v">294k</div><div class="s">all languages, all channels</div></div>
     </div>
-    <div class="g2" style="margin-top:12px; gap:14px">
-      <div class="tile"><div class="k">Scenario range</div><div class="v">462–579</div><div class="s">LOW flat &rarr; HIGH trend</div></div>
-      <div class="tile"><div class="k">P10–P90</div><div class="v">425–606</div><div class="s">σ = 13.8%</div></div>
+    <div class="note red" style="margin-top:16px">
+      <h3>One number needs an owner <span class="crit">±78 FTE</span></h3>
+      <p class="sm tight">AHT assumption (709.8s, 4 channels) and Apr–Jun actuals (908.8s, ticket
+      reasons) agree within 1% once outbound is excluded from both — <strong>this isn't AHT drift.</strong>
+      The real question: is outbound English volume real? It mirrors inbound in 29/30 months.
+      <strong>508 vs 585 FTE</strong>, unresolvable without an owner for outbound.</p>
     </div>
+    <p class="xs mute" style="margin-top:10px">Full scenario range (LOW/HIGH) and the P10–P90
+      confidence band are in the appendix (A3).</p>
   </div>
   <div class="col" style="flex:0 0 40%">
-    <h2>A quarter of the requirement is service level, not workload</h2>
-    <svg class="chart" viewBox="0 0 330 296" width="100%" preserveAspectRatio="xMidYMid meet" role="img"><line x1="4.0" y1="246.0" x2="326.0" y2="246.0" stroke="#c3c2b7" stroke-width="1" opacity="1"/><path d="M19.2,246.0 L19.2,119.3 Q19.2,116.3 22.2,116.3 L50.2,116.3 Q53.2,116.3 53.2,119.3 L53.2,246.0 Z" fill="#d9d8d2"/><text x="36.2" y="108.3" font-size="15" fill="#52514e" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">360</text><text x="36.2" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Workload</text><text x="36.2" y="273.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">÷ shrinkage</text><path d="M83.6,116.3 L83.6,74.6 Q83.6,71.6 86.6,71.6 L114.6,71.6 Q117.6,71.6 117.6,74.6 L117.6,116.3 Z" fill="#2a78d6"/><text x="100.6" y="63.6" font-size="12" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">+124</text><line x1="53.2" y1="116.3" x2="83.6" y2="116.3" stroke="#c3c2b7" stroke-width="1" opacity="0.9" stroke-dasharray="2 2"/><text x="100.6" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">+ service level</text><text x="100.6" y="273.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">(Erlang C)</text><path d="M148.0,71.6 L148.0,71.6 Q148.0,69.7 150.0,69.7 L180.0,69.7 Q182.0,69.7 182.0,71.6 L182.0,71.6 Z" fill="#d9d8d2"/><text x="165.0" y="61.7" font-size="10" fill="#52514e" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">+5</text><line x1="117.6" y1="71.6" x2="148.0" y2="71.6" stroke="#c3c2b7" stroke-width="1" opacity="0.9" stroke-dasharray="2 2"/><text x="165.0" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">+ learning</text><text x="165.0" y="273.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">curve</text><path d="M212.4,69.7 L212.4,66.2 Q212.4,63.2 215.4,63.2 L243.4,63.2 Q246.4,63.2 246.4,66.2 L246.4,69.7 Z" fill="#d9d8d2"/><text x="229.4" y="55.2" font-size="10" fill="#52514e" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">+18</text><line x1="182.0" y1="69.7" x2="212.4" y2="69.7" stroke="#c3c2b7" stroke-width="1" opacity="0.9" stroke-dasharray="2 2"/><text x="229.4" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">+ training</text><text x="229.4" y="273.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">class</text><path d="M276.8,246.0 L276.8,66.2 Q276.8,63.2 279.8,63.2 L307.8,63.2 Q310.8,63.2 310.8,66.2 L310.8,246.0 Z" fill="#2a78d6"/><text x="293.8" y="55.2" font-size="15" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">508</text><text x="293.8" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Paid FTE</text><text x="100.6" y="20.0" font-size="9" fill="#2a78d6" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">+34% — this is the brief's requirement</text></svg>
+    <h2 style="font-size:14px; color:#0b0b0b">A quarter of the requirement is service level, not workload</h2>
+    <svg class="chart" viewBox="0 0 330 296" width="100%" preserveAspectRatio="xMidYMid meet" role="img"><line x1="4.0" y1="246.0" x2="326.0" y2="246.0" stroke="#c3c2b7" stroke-width="1" opacity="1"/><path d="M19.2,246.0 L19.2,119.3 Q19.2,116.3 22.2,116.3 L50.2,116.3 Q53.2,116.3 53.2,119.3 L53.2,246.0 Z" fill="#d9d8d2"/><text x="36.2" y="108.3" font-size="15" fill="#52514e" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">360</text><text x="36.2" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Workload</text><text x="36.2" y="273.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">÷ shrinkage</text><path d="M83.6,116.3 L83.6,74.6 Q83.6,71.6 86.6,71.6 L114.6,71.6 Q117.6,71.6 117.6,74.6 L117.6,116.3 Z" fill="#2a78d6"/><text x="100.6" y="63.6" font-size="12" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">+124</text><line x1="53.2" y1="116.3" x2="83.6" y2="116.3" stroke="#c3c2b7" stroke-width="1" opacity="0.9" stroke-dasharray="2 2"/><text x="100.6" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">+ service level</text><text x="100.6" y="273.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">(Erlang C)</text><path d="M148.0,71.6 L148.0,71.6 Q148.0,69.7 150.0,69.7 L180.0,69.7 Q182.0,69.7 182.0,71.6 L182.0,71.6 Z" fill="#d9d8d2"/><text x="165.0" y="61.7" font-size="10" fill="#52514e" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">+5</text><line x1="117.6" y1="71.6" x2="148.0" y2="71.6" stroke="#c3c2b7" stroke-width="1" opacity="0.9" stroke-dasharray="2 2"/><text x="165.0" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">+ learning</text><text x="165.0" y="273.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">curve</text><path d="M212.4,69.7 L212.4,66.2 Q212.4,63.2 215.4,63.2 L243.4,63.2 Q246.4,63.2 246.4,66.2 L246.4,69.7 Z" fill="#d9d8d2"/><text x="229.4" y="55.2" font-size="10" fill="#52514e" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">+18</text><line x1="182.0" y1="69.7" x2="212.4" y2="69.7" stroke="#c3c2b7" stroke-width="1" opacity="0.9" stroke-dasharray="2 2"/><text x="229.4" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">+ training</text><text x="229.4" y="273.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">class</text><path d="M276.8,246.0 L276.8,66.2 Q276.8,63.2 279.8,63.2 L307.8,63.2 Q310.8,63.2 310.8,66.2 L310.8,246.0 Z" fill="#2a78d6"/><text x="293.8" y="55.2" font-size="15" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">508</text><text x="293.8" y="262.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Paid FTE</text></svg>
     <p class="sm" style="margin-top:4px">A workload model returns <strong>360 FTE</strong> and
       <strong class="crit">misses SLA</strong> — it implicitly assumes 100% occupancy. Erlang C says
       English inbound runs at <strong>70%</strong>; the idle 30% <em>is</em> the 20-second answer time.</p>
   </div>
   <div class="col" style="flex:0 0 30%">
-    <h2>Two levers, both from the same evidence</h2>
-    <div class="note" style="margin-bottom:11px">
-      <h3>Pool the four non-English queues <span class="accent">−51 FTE</span></h3>
-      <p class="sm tight">German phone runs at 42% occupancy, Italian at 28% — four small queues
-      each paying the 80/20 minimum-seat floor separately. All four are already in BPO 3.</p>
-    </div>
-    <div class="note" style="margin-bottom:11px">
-      <h3>Validate chat concurrency <span class="accent">−75 FTE</span></h3>
-      <p class="sm tight">Chat is 39% of the whole operation. The given 1.2 is far below the
-      industry 2–3 and repeats on every row — it reads as a placeholder, not a measurement.</p>
-    </div>
-    <div class="note red">
-      <h3>One number needs an owner <span class="crit">±78 FTE</span></h3>
-      <p class="sm tight">The workbook states English AHT twice — <strong>908.8s</strong> by reason,
-      <strong>709.8s</strong> by channel. Run both ways the answer is <strong>508 vs 585</strong>.
-      That is 15% of the plan, unresolvable without the business.</p>
-    </div>
+    <h2 style="font-size:14px; color:#0b0b0b">Model architecture — one chain, two paths in</h2>
+    <svg class="chart" viewBox="0 0 300 268" width="100%" preserveAspectRatio="xMidYMid meet" role="img">
+      <rect x="6" y="6" width="138" height="30" rx="4" fill="#f2f2ef"/>
+      <text x="75" y="21" font-size="9" fill="#0b0b0b" text-anchor="middle" font-weight="700">Email + Outbound</text>
+      <text x="75" y="31.5" font-size="7" fill="#898781" text-anchor="middle" font-weight="700" letter-spacing="0.08em">DEFERRED</text>
+      <rect x="156" y="6" width="138" height="30" rx="4" fill="#f2f2ef"/>
+      <text x="225" y="21" font-size="9" fill="#0b0b0b" text-anchor="middle" font-weight="700">Inbound + Chat</text>
+      <text x="225" y="31.5" font-size="7" fill="#2a78d6" text-anchor="middle" font-weight="700" letter-spacing="0.08em">REAL-TIME</text>
+      <line x1="75" y1="36" x2="75" y2="46" stroke="#c3c2b7" stroke-width="1.2"/>
+      <line x1="225" y1="36" x2="225" y2="46" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="6" y="46" width="138" height="36" rx="4" fill="#d9d8d2"/>
+      <text x="75" y="63" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="700">÷ occupancy (85%)</text>
+      <text x="75" y="75" font-size="7" fill="#52514e" text-anchor="middle">seat-equiv. hours</text>
+      <rect x="156" y="46" width="138" height="36" rx="4" fill="#cde2fb"/>
+      <text x="225" y="60" font-size="8" fill="#0b0b0b" text-anchor="middle" font-weight="700">Erlang C — 80/20s, 80/60s</text>
+      <text x="225" y="72" font-size="7" fill="#1c5cab" text-anchor="middle">&rarr; seats &times; 730h/mo</text>
+      <line x1="75" y1="82" x2="150" y2="96" stroke="#c3c2b7" stroke-width="1.2"/>
+      <line x1="225" y1="82" x2="150" y2="96" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="40" y="96" width="220" height="28" rx="4" fill="#d9d8d2"/>
+      <text x="150" y="114" font-size="9.5" fill="#0b0b0b" text-anchor="middle" font-weight="700">÷ shrinkage (18%)</text>
+      <line x1="150" y1="124" x2="150" y2="134" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="40" y="134" width="220" height="34" rx="4" fill="#d9d8d2"/>
+      <text x="150" y="150" font-size="9" fill="#0b0b0b" text-anchor="middle" font-weight="700">÷ 173.33 h per FTE</text>
+      <text x="150" y="163" font-size="10" fill="#2a78d6" text-anchor="middle" font-weight="700">&rarr; 484 FTE, SLA-met</text>
+      <line x1="150" y1="168" x2="150" y2="178" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="40" y="178" width="220" height="30" rx="4" fill="#d9d8d2"/>
+      <text x="150" y="192" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="700">÷ tenure-blend (0.989)</text>
+      <text x="150" y="203" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="700">+ 4-week training class</text>
+      <line x1="150" y1="208" x2="150" y2="218" stroke="#c3c2b7" stroke-width="1.2"/>
+      <rect x="40" y="218" width="220" height="42" rx="5" fill="#2a78d6"/>
+      <text x="150" y="235" font-size="7.5" fill="#fcfcfb" text-anchor="middle" font-weight="700" letter-spacing="0.1em">PAID FTE — THE BILL</text>
+      <text x="150" y="254" font-size="18" fill="#fcfcfb" text-anchor="middle" font-weight="700">508</text>
+    </svg>
+    <p class="xs mute" style="margin-top:6px">Two paths — deferred (workload) and real-time (Erlang C)
+      — merge before shrinkage. Same chain, every language. Full formula and constants on slide 02.</p>
   </div>
 </div></div>
-  <div class="foot"><span>GetYourGuide &middot; WFM take-home &middot; all figures reproduced by <span style="font-family:monospace">run_model.py</span>, verified by <span style="font-family:monospace">crosscheck.py</span> (72/72)</span><span class="pg">1 / 5</span></div>
+  <div class="foot"><span>GetYourGuide &middot; WFM take-home submission &middot; </span><span class="pg">1 / 5</span></div>
 </section><section class="slide">
   <div class="eyebrow"><span class="tag">02 · Method</span><span>Manager, Workforce Management &middot; Care Experience &amp; Strategy</span></div>
   <h1>How the number is built — and what the data would not tell us</h1>
@@ -133,50 +156,41 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
   <div class="body">
 <div class="row">
   <div class="col" style="flex:0 0 33%">
-    <h2>The chain</h2>
+    <h2 style="font-size:14px; color:#0b0b0b">Assumptions — what we had to decide</h2>
     <table style="font-size:10px; line-height:1.9">
-      <tr><td style="width:52%"><strong>contacts × AHT</strong></td><td class="mute">workload hours</td></tr>
-      <tr><td><strong>phone &amp; chat → Erlang C</strong></td><td class="accent">concurrent seats</td></tr>
-      <tr><td><strong>email &amp; outbound ÷ occupancy</strong></td><td class="mute">seat-equivalent hours</td></tr>
-      <tr><td><strong>÷ (1 − 18% shrinkage)</strong></td><td class="mute">paid hours</td></tr>
-      <tr><td><strong>÷ 173.33 h per FTE</strong></td><td class="mute">FTE meeting SLA</td></tr>
-      <tr><td><strong>÷ tenure efficiency</strong></td><td class="mute">on-floor FTE</td></tr>
-      <tr class="tot"><td><strong>+ training class</strong></td><td><strong>paid FTE</strong></td></tr>
+      <tr><td style="width:46%"><strong>Deferred occupancy</strong></td><td class="mute">85% — not in the data, industry-typical</td></tr>
+      <tr><td><strong>Shrinkage</strong></td><td class="mute">18% flat — matches the workbook exactly</td></tr>
+      <tr><td><strong>Attrition</strong></td><td class="mute">36%/yr → 3.65%/mo, compounded</td></tr>
+      <tr><td><strong>Seasonal uplift</strong></td><td class="mute">+10% — mandated by the brief</td></tr>
+      <tr><td><strong>Routing</strong></td><td class="mute">BPO 1&amp;2 English; BPO 3 DE/IT/ES/FR</td></tr>
+      <tr><td><strong>Chat concurrency</strong></td><td class="mute">1.2 as given — <span class="crit">open, see Q2</span></td></tr>
+      <tr class="tot"><td><strong>English AHT engine</strong></td><td>channel-level, incl. outbound — <span class="crit">open, see Q1</span></td></tr>
     </table>
-    <div class="note" style="margin-top:13px">
-      <p class="sm tight"><strong>Erlang C returns seats, not FTE.</strong>
-      11 concurrent seats × 730 h ÷ 0.82 ÷ 173.33 =
-      <strong>56.5 FTE</strong>, against 39.5 from workload
-      alone on the same queue.</p>
-    </div>
-    <p class="sm mute" style="margin-top:12px">Monthly-average arrival rates make this a <em>floor</em>:
-    real intraday peaks and overnight minimum-staffing push interval-level staffing up, never down.</p>
-    <div class="note grey" style="margin-top:14px">
-      <p class="sm tight"><strong>Everything here is reproducible.</strong> One command regenerates the
-      whole plan from the workbook; a second re-verifies it with 72 independent checks, including
-      Erlang C against a discrete-event simulation and the full July chain re-derived from raw cells
-      through a separate code path. Appendix A5 has the detail.</p>
-    </div>
+    <p class="sm mute" style="margin-top:12px">Erlang C runs on a flat 24/7 average arrival rate — a
+      <em>floor</em>. Real intraday peaks and overnight minimum-staffing push interval-level staffing
+      up, never down.</p>
   </div>
   <div class="col" style="flex:0 0 40%">
-    <h2>Data quality — 12 checks, every decision logged</h2>
-    <table><tr><td><span class="pill warn">warn</span></td><td>channel rows sum to language total</td><td class="mute">17/30 language-months disagree with their own 'Tot' row; max 2 contacts…</td></tr><tr><td><span class="pill pass">pass</span></td><td>EN CSAT reason tickets tie to Contact Volume English total</td><td class="mute">max |ratio - 1| = 0.00e+00 across 6 months (ratios 1.000000, 1.000000…</td></tr><tr><td><span class="pill fix">fix</span></td><td>CSAT reported against zero tickets</td><td class="mute">3 reason-months carry a CSAT score with 0 tickets (e.g. 18.2. Positive…</td></tr><tr><td><span class="pill fix">fix</span></td><td>reason label missing</td><td class="mute">one reason row has a blank label carrying 3,729 tickets (0.63% of English…</td></tr><tr><td><span class="pill fix">fix</span></td><td>AHT outliers vs reason median</td><td class="mute">1 reason-months outside 0.5x-2.0x their own median; worst: 1.4. Pricing…</td></tr><tr><td><span class="pill warn">warn</span></td><td>channel pair Inbound == Outbound</td><td class="mute">identical in 29/30 language-months</td></tr><tr><td><span class="pill warn">warn</span></td><td>channel pair Email == Chat</td><td class="mute">identical in 23/30 language-months</td></tr></table>
-    <p class="sm" style="margin-top:9px"><strong>The validation that passed matters most:</strong>
-    the per-reason ticket counts tie to the English contact volume in all six months at a ratio of
-    <strong>exactly 1.000000</strong> — so the two sheets describe the same population and the
-    reason-mix join is safe.</p>
-    <div class="note red" style="margin-top:10px">
-      <p class="sm tight"><strong>SLA attainment has fallen 95% → 92% while volume doubled</strong>
-      (<span class="mute">February reports 110%, which is impossible</span>). That is the business
-      case for this transformation, sitting unused in the source data.</p>
+    <h2 style="font-size:14px; color:#0b0b0b">Data quality — 12 checks, full log in appendix</h2>
+    <table>
+      <tr><td><span class="pill pass">pass</span></td><td>English reason tickets tie to Contact Volume, all 6 months</td><td class="mute">ratio exactly 1.000000 — safe to join</td></tr>
+      <tr><td><span class="pill warn">warn</span></td><td>Channel rows vs their own language total</td><td class="mute">off by ≤2 contacts in 17/30 months — channel rows are the source of truth</td></tr>
+      <tr><td><span class="pill fix">fix</span></td><td>Blank reason label, 3,729 tickets</td><td class="mute">relabelled "UNMAPPED", volume kept</td></tr>
+      <tr><td><span class="pill fix">fix</span></td><td>1 AHT outlier vs its reason median</td><td class="mute">replaced with the reason's own median</td></tr>
+      <tr><td><span class="pill warn">warn</span></td><td>Inbound = Outbound, Email = Chat in most months</td><td class="mute">synthetic mirror — kept conservatively, flagged</td></tr>
+      <tr><td><span class="pill fix">fix</span></td><td>SLA attainment reported at 110% in February</td><td class="mute">impossible — excluded from the trend</td></tr>
+    </table>
+    <div class="note red" style="margin-top:12px">
+      <p class="sm tight"><strong>SLA attainment fell 95% → 92% while volume doubled.</strong>
+      That is the business case for this transformation, sitting unused in the source data.</p>
     </div>
   </div>
   <div class="col" style="flex:0 0 27%">
-    <h2>Two open questions, priced</h2>
-    <h3>1 · Which English AHT is authoritative?</h3>
-    <p class="sm">Reason-level <strong>908.8s</strong> vs channel-level <strong>709.8s</strong>.
-      Both cannot be right — 25% of English contacts are outbound at 107s.
-      <span class="crit">Worth 78 FTE (15%).</span></p>
+    <h2 style="font-size:14px; color:#0b0b0b">Two open questions, priced</h2>
+    <h3>1 · Is outbound English volume real?</h3>
+    <p class="sm">AHT assumption (709.8s) and Apr–Jun actuals (908.8s) agree within 1% once outbound
+      is excluded from both — not AHT drift. Outbound mirrors inbound in 29/30 months, the signature
+      of a synthetic column. <span class="crit">Worth 78 FTE (15%) either way.</span></p>
     <h3 style="margin-top:11px">2 · Is chat concurrency measured or assumed?</h3>
     <p class="sm">1.2 on every BPO and every language, under a header that says "English".
       <span class="crit">Worth 75 FTE.</span></p>
@@ -196,7 +210,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
     </div>
   </div>
 </div></div>
-  <div class="foot"><span>GetYourGuide &middot; WFM take-home &middot; all figures reproduced by <span style="font-family:monospace">run_model.py</span>, verified by <span style="font-family:monospace">crosscheck.py</span> (72/72)</span><span class="pg">2 / 5</span></div>
+  <div class="foot"><span>GetYourGuide &middot; WFM take-home submission &middot; </span><span class="pg">2 / 5</span></div>
 </section><section class="slide">
   <div class="eyebrow"><span class="tag">03 · Task 1a — Capacity forecast</span><span>Manager, Workforce Management &middot; Care Experience &amp; Strategy</span></div>
   <h1>Forecast, capacity and the range around it</h1>
@@ -205,19 +219,17 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
   <div class="body">
 <div class="row">
   <div class="col" style="flex:0 0 46%">
-    <h2>Volume — six months of actuals, three of forecast</h2>
+    <h2 style="font-size:14px; color:#0b0b0b">Volume — six months of actuals, three of forecast</h2>
     <svg class="chart" viewBox="0 0 376 252" width="100%" preserveAspectRatio="xMidYMid meet" role="img"><line x1="30.0" y1="222.0" x2="324.0" y2="222.0" stroke="#e1e0d9" stroke-width="1" opacity="1"/><text x="23.0" y="225.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">0</text><line x1="30.0" y1="168.8" x2="324.0" y2="168.8" stroke="#e1e0d9" stroke-width="1" opacity="1"/><text x="23.0" y="171.8" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">100k</text><line x1="30.0" y1="115.7" x2="324.0" y2="115.7" stroke="#e1e0d9" stroke-width="1" opacity="1"/><text x="23.0" y="118.7" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">200k</text><line x1="30.0" y1="62.5" x2="324.0" y2="62.5" stroke="#e1e0d9" stroke-width="1" opacity="1"/><text x="23.0" y="65.5" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">300k</text><polygon points="213.8,80.0 250.5,62.0 287.2,52.2 324.0,42.3 324.0,80.0 287.2,80.0 250.5,80.0 213.8,80.0" fill="#2a78d6" opacity="0.10"/><polyline points="30.0,157.4 66.8,161.6 103.5,108.9 140.2,95.3 177.0,105.5 213.8,80.0" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><polyline points="213.8,80.0 250.5,65.8 287.2,65.8 324.0,65.8" fill="none" stroke="#2a78d6" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 3"/><circle cx="30.0" cy="157.4" r="3.2" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/><circle cx="66.8" cy="161.6" r="3.2" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/><circle cx="103.5" cy="108.9" r="3.2" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/><circle cx="140.2" cy="95.3" r="3.2" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/><circle cx="177.0" cy="105.5" r="3.2" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/><circle cx="213.8" cy="80.0" r="3.2" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/><line x1="327.0" y1="42.3" x2="327.0" y2="42.3" stroke="#c3c2b7" stroke-width="1" opacity="0.85"/><text x="330.0" y="45.3" font-size="8.5" fill="#52514e" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">HIGH 338k</text><line x1="327.0" y1="65.8" x2="327.0" y2="65.8" stroke="#c3c2b7" stroke-width="1" opacity="0.85"/><text x="330.0" y="68.8" font-size="8.5" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">BASE 294k</text><line x1="327.0" y1="80.0" x2="327.0" y2="80.0" stroke="#c3c2b7" stroke-width="1" opacity="0.85"/><text x="330.0" y="83.0" font-size="8.5" fill="#52514e" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">LOW 267k</text><line x1="103.5" y1="20.0" x2="103.5" y2="222.0" stroke="#d03b3b" stroke-width="1" opacity="0.5" stroke-dasharray="3 3"/><text x="107.5" y="30.0" font-size="8" fill="#d03b3b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">March +87%</text><text x="107.5" y="40.0" font-size="7.5" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">all 5 languages</text><line x1="232.1" y1="20.0" x2="232.1" y2="222.0" stroke="#c3c2b7" stroke-width="1" opacity="0.8"/><text x="227.1" y="218.0" font-size="7.5" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0.3" opacity="1">actual</text><text x="237.1" y="218.0" font-size="7.5" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0.3" opacity="1">forecast</text><text x="30.0" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Jan</text><text x="66.8" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Feb</text><text x="103.5" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Mar</text><text x="140.2" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Apr</text><text x="177.0" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">May</text><text x="213.8" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Jun</text><text x="250.5" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Jul</text><text x="287.2" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Aug</text><text x="324.0" y="236.0" font-size="8" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">Sep</text></svg>
-    <p class="sm" style="margin-top:6px"><strong>The baseline is June, not an average.</strong> March is
-    a <span class="crit">structural break</span>, not seasonality — all five languages step together
-    (1.60×–2.06×) across every channel and all 49 reason codes. Consumer demand does not double in
-    lockstep across five independent markets; a reporting or scope change does. Either way the action
-    is the same: anchor on post-break months only.</p>
-    <p class="sm"><strong>BASE is held flat</strong> across Jul–Sep — not a claim that demand is flat,
-    but a refusal to invent a summer curve from six months containing a level shift. HIGH is the
-    summer-peak case; slide 5 carries the trigger that switches to it.</p>
+    <p class="sm" style="margin-top:6px"><strong>The baseline is June, not an average.</strong> March jumps
+    1.6–2.1× across all five languages, every channel and all 49 reason codes at once — the signature of
+    a system or reporting change, not real demand. We anchor on post-break months only.</p>
+    <p class="sm"><strong>BASE holds Jul–Sep flat</strong> — not a claim that demand is flat, but a refusal
+    to invent a summer curve from six months that include a level shift. HIGH is the summer-peak case;
+    slide 5 has the trigger to switch to it.</p>
   </div>
   <div class="col" style="flex:0 0 27%">
-    <h2>Capacity by language — BASE, per month</h2>
+    <h2 style="font-size:14px; color:#0b0b0b">Capacity by language — BASE, per month</h2>
     <table>
       <tr><th>Language</th><th class="n">Contacts</th><th class="n">Prod h</th>
           <th class="n">Workload<br>FTE</th><th class="n">SLA<br>FTE</th></tr>
@@ -226,7 +238,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
         <td class="n">68,827</td><td class="n">360</td>
         <td class="n">484</td></tr>
     </table>
-    <h2 style="margin-top:16px">By BPO — the vendor brief</h2>
+    <h2 style="margin-top:16px; font-size:14px; color:#0b0b0b">By BPO — vendor split</h2>
     <table>
       <tr><th>BPO</th><th>Languages</th><th class="n">FTE</th><th class="n">Prod h</th></tr>
       <tr><td><strong>BPO 3</strong></td><td class="mute">DE IT ES FR</td>
@@ -240,7 +252,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
     capacity does not depend on how English is split between the two vendors.</p>
   </div>
   <div class="col" style="flex:0 0 27%">
-    <h2>Scenarios — paid FTE</h2>
+    <h2 style="font-size:14px; color:#0b0b0b">Scenarios — paid FTE</h2>
     <table>
       <tr><th>Case</th><th class="n">Jul</th><th class="n">Aug</th><th class="n">Sep</th><th class="n">Basis</th></tr>
       <tr><td><strong>LOW</strong></td><td class="n">462</td><td class="n">462</td><td class="n">462</td><td class="n mute">June run-rate, no uplift</td></tr><tr><td><strong>BASE</strong></td><td class="n">508</td><td class="n">508</td><td class="n">508</td><td class="n mute">June × 1.10, held flat</td></tr><tr><td><strong>HIGH</strong></td><td class="n">518</td><td class="n">551</td><td class="n">579</td><td class="n mute">English on trend × 1.10</td></tr>
@@ -256,7 +268,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
     4-week class and a 3-month ramp, recruitment must lead the forecast by a full quarter.</p>
   </div>
 </div></div>
-  <div class="foot"><span>GetYourGuide &middot; WFM take-home &middot; all figures reproduced by <span style="font-family:monospace">run_model.py</span>, verified by <span style="font-family:monospace">crosscheck.py</span> (72/72)</span><span class="pg">3 / 5</span></div>
+  <div class="foot"><span>GetYourGuide &middot; WFM take-home submission &middot; </span><span class="pg">3 / 5</span></div>
 </section><section class="slide">
   <div class="eyebrow"><span class="tag">04 · Task 1b — Optimisation</span><span>Manager, Workforce Management &middot; Care Experience &amp; Strategy</span></div>
   <h1>Two strategies the arithmetic supports — and one it kills</h1>
@@ -265,7 +277,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
   <div class="body">
 <div class="row">
   <div class="col" style="flex:0 0 40%">
-    <h2>Strategy 1 · Pool the four non-English queues <span class="accent">−51.4 FTE (10%)</span></h2>
+    <h2 style="font-size:13px; color:#0b0b0b">Strategy 1 · Pool the four non-English queues <span class="accent">−51.4 FTE (10%)</span></h2>
     <svg class="chart" viewBox="0 0 560 234" width="100%" preserveAspectRatio="xMidYMid meet" role="img"><text x="96.0" y="12.0" font-size="8.5" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">Occupancy at the solved seat count — idle time IS the service level</text><text x="89.0" y="38.0" font-size="8.5" fill="#0b0b0b" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">Italian inbound</text><path d="M96.0,29.0 L201.7,29.0 Q204.7,29.0 204.7,32.0 L204.7,39.0 Q204.7,42.0 201.7,42.0 L96.0,42.0 Z" fill="#2a78d6"/><text x="209.7" y="39.0" font-size="9" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">28%</text><text x="558.0" y="39.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">3 seats</text><text x="89.0" y="57.0" font-size="8.5" fill="#0b0b0b" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">French inbound</text><path d="M96.0,48.0 L213.5,48.0 Q216.5,48.0 216.5,51.0 L216.5,58.0 Q216.5,61.0 213.5,61.0 L96.0,61.0 Z" fill="#2a78d6"/><text x="221.5" y="58.0" font-size="9" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">31%</text><text x="558.0" y="58.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">3 seats</text><text x="89.0" y="76.0" font-size="8.5" fill="#0b0b0b" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">Spanish inbound</text><path d="M96.0,67.0 L241.6,67.0 Q244.6,67.0 244.6,70.0 L244.6,77.0 Q244.6,80.0 241.6,80.0 L96.0,80.0 Z" fill="#2a78d6"/><text x="249.6" y="77.0" font-size="9" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">38%</text><text x="558.0" y="77.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">3 seats</text><text x="89.0" y="95.0" font-size="8.5" fill="#0b0b0b" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">German inbound</text><path d="M96.0,86.0 L256.3,86.0 Q259.3,86.0 259.3,89.0 L259.3,96.0 Q259.3,99.0 256.3,99.0 L96.0,99.0 Z" fill="#2a78d6"/><text x="264.3" y="96.0" font-size="9" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">42%</text><text x="558.0" y="96.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">3 seats</text><text x="89.0" y="114.0" font-size="8.5" fill="#0b0b0b" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">French chat</text><path d="M96.0,105.0 L268.4,105.0 Q271.4,105.0 271.4,108.0 L271.4,115.0 Q271.4,118.0 268.4,118.0 L96.0,118.0 Z" fill="#2a78d6"/><text x="276.4" y="115.0" font-size="9" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">45%</text><text x="558.0" y="115.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">5 seats</text><text x="89.0" y="133.0" font-size="8.5" fill="#0b0b0b" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">Italian chat</text><path d="M96.0,124.0 L290.9,124.0 Q293.9,124.0 293.9,127.0 L293.9,134.0 Q293.9,137.0 290.9,137.0 L96.0,137.0 Z" fill="#2a78d6"/><text x="298.9" y="134.0" font-size="9" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">51%</text><text x="558.0" y="134.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">4 seats</text><text x="89.0" y="152.0" font-size="8.5" fill="#0b0b0b" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">German chat</text><path d="M96.0,143.0 L291.1,143.0 Q294.1,143.0 294.1,146.0 L294.1,153.0 Q294.1,156.0 291.1,156.0 L96.0,156.0 Z" fill="#2a78d6"/><text x="299.1" y="153.0" font-size="9" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">51%</text><text x="558.0" y="153.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">6 seats</text><text x="89.0" y="171.0" font-size="8.5" fill="#0b0b0b" text-anchor="end" font-weight="700" letter-spacing="0" opacity="1">Spanish chat</text><path d="M96.0,162.0 L309.3,162.0 Q312.3,162.0 312.3,165.0 L312.3,172.0 Q312.3,175.0 309.3,175.0 L96.0,175.0 Z" fill="#2a78d6"/><text x="317.3" y="172.0" font-size="9" fill="#0b0b0b" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">55%</text><text x="558.0" y="172.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">5 seats</text><text x="89.0" y="190.0" font-size="8.5" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">English inbound</text><path d="M96.0,181.0 L365.7,181.0 Q368.7,181.0 368.7,184.0 L368.7,191.0 Q368.7,194.0 365.7,194.0 L96.0,194.0 Z" fill="#d9d8d2"/><text x="373.7" y="191.0" font-size="9" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">70%</text><text x="558.0" y="191.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">11 seats</text><text x="89.0" y="209.0" font-size="8.5" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">English chat</text><path d="M96.0,200.0 L397.9,200.0 Q400.9,200.0 400.9,203.0 L400.9,210.0 Q400.9,213.0 397.9,213.0 L96.0,213.0 Z" fill="#d9d8d2"/><text x="405.9" y="210.0" font-size="9" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">78%</text><text x="558.0" y="210.0" font-size="8" fill="#898781" text-anchor="end" font-weight="400" letter-spacing="0" opacity="1">24 seats</text><line x1="328.0" y1="20.0" x2="328.0" y2="216.0" stroke="#2a78d6" stroke-width="1" opacity="0.55" stroke-dasharray="3 2"/><text x="96.0" y="230.0" font-size="8.5" fill="#2a78d6" text-anchor="start" font-weight="700" letter-spacing="0" opacity="1">59.5% — where the four pooled phone queues land</text></svg>
     <p class="sm" style="margin-top:12px"><strong>The occupancy column is the finding.</strong> Those
     queues are not idle by choice — 80/20 on a queue of 0.84 erlangs, staffed 24/7, needs 3 seats no
@@ -278,7 +290,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
     </table>
   </div>
   <div class="col" style="flex:0 0 33%">
-    <h2>Why it works, and what it costs</h2>
+    <h2 style="font-size:14px; color:#0b0b0b">Why it works, and what it costs</h2>
     <p class="sm">All four languages already sit in BPO 3, so this is a routing
     and skilling change, not a vendor change. Both pooled queues were <strong>re-solved through the
     same Erlang engine</strong> — the service level goes up, not down. Phase it: start with the
@@ -295,7 +307,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
     </div>
   </div>
   <div class="col" style="flex:0 0 27%">
-    <h2>Strategy 2 · Chat concurrency <span class="accent">−75.3 FTE (15%)</span></h2>
+    <h2 style="font-size:13px; color:#0b0b0b">Strategy 2 · Chat concurrency <span class="accent">−75.3 FTE (15%)</span></h2>
     <svg class="chart" viewBox="0 0 228 196" width="100%" preserveAspectRatio="xMidYMid meet" role="img"><line x1="6.0" y1="156.0" x2="222.0" y2="156.0" stroke="#c3c2b7" stroke-width="1" opacity="1"/><path d="M15.5,156.0 L15.5,55.7 Q15.5,52.7 18.5,52.7 L36.7,52.7 Q39.7,52.7 39.7,55.7 L39.7,156.0 Z" fill="#2a78d6"/><text x="27.6" y="45.7" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">188</text><text x="27.6" y="170.0" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">1.2</text><path d="M58.7,156.0 L58.7,76.3 Q58.7,73.3 61.7,73.3 L79.9,73.3 Q82.9,73.3 82.9,76.3 L82.9,156.0 Z" fill="#d9d8d2"/><text x="70.8" y="66.3" font-size="10" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">151</text><text x="70.8" y="170.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">1.5</text><path d="M101.9,156.0 L101.9,97.0 Q101.9,94.0 104.9,94.0 L123.1,94.0 Q126.1,94.0 126.1,97.0 L126.1,156.0 Z" fill="#2a78d6"/><text x="114.0" y="87.0" font-size="10" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">113</text><text x="114.0" y="170.0" font-size="8.5" fill="#0b0b0b" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">2</text><path d="M145.1,156.0 L145.1,109.4 Q145.1,106.4 148.1,106.4 L166.3,106.4 Q169.3,106.4 169.3,109.4 L169.3,156.0 Z" fill="#d9d8d2"/><text x="157.2" y="99.4" font-size="10" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">90</text><text x="157.2" y="170.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">2.5</text><path d="M188.3,156.0 L188.3,117.7 Q188.3,114.7 191.3,114.7 L209.5,114.7 Q212.5,114.7 212.5,117.7 L212.5,156.0 Z" fill="#d9d8d2"/><text x="200.4" y="107.7" font-size="10" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">75</text><text x="200.4" y="170.0" font-size="8.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">3</text><text x="114.0" y="184.0" font-size="7.5" fill="#898781" text-anchor="middle" font-weight="400" letter-spacing="0" opacity="1">chats handled per agent, concurrently</text><text x="6.0" y="11.0" font-size="8" fill="#898781" text-anchor="start" font-weight="400" letter-spacing="0" opacity="1">Chat FTE</text><line x1="27.6" y1="34.7" x2="114.0" y2="34.7" stroke="#2a78d6" stroke-width="1" opacity="0.8"/><line x1="114.0" y1="34.7" x2="114.0" y2="87.0" stroke="#2a78d6" stroke-width="1" opacity="0.8"/><text x="70.8" y="30.7" font-size="10" fill="#2a78d6" text-anchor="middle" font-weight="700" letter-spacing="0" opacity="1">−75.3 FTE</text></svg>
     <p class="sm" style="margin-top:2px">Chat is <strong>188 FTE — 39% of the entire operation</strong>,
     the largest single line in the plan. The given 1.2 sits under a column headed "Chat concurrency
@@ -312,7 +324,7 @@ table.dense .pill { font-size:6.5px; padding:1px 4px; }
     </div>
   </div>
 </div></div>
-  <div class="foot"><span>GetYourGuide &middot; WFM take-home &middot; all figures reproduced by <span style="font-family:monospace">run_model.py</span>, verified by <span style="font-family:monospace">crosscheck.py</span> (72/72)</span><span class="pg">4 / 5</span></div>
+  <div class="foot"><span>GetYourGuide &middot; WFM take-home submission &middot; </span><span class="pg">4 / 5</span></div>
 </section><section class="slide">
   <div class="eyebrow"><span class="tag">05 · Section 2 + Task 1c</span><span>Manager, Workforce Management &middot; Care Experience &amp; Strategy</span></div>
   <h1>Leading the transformation — and how AI was actually used</h1>
