@@ -382,6 +382,46 @@ BPO3 has the *lowest* channel AHT (e.g. Spanish email 600 vs BPO1/2 800) and is 
 
 Each strategy stated as: "if X, we save Y productive hours ≈ Z FTE/month".
 
+### Strategy 1, revised — pool 2 languages first, not all 4
+
+The full pool (all 4 non-English langs, both channels) assumes agents are already
+multilingual across DE/IT/ES/FR. That's untested — pooling only works if the
+routing system can still match a caller to someone who speaks their language;
+it doesn't mean random cross-language routing. Concrete, de-risked rollout:
+
+1. **Audit BPO3's skills matrix first** — how many current agents are already
+   certified in 2+ of DE/IT/ES/FR. This determines whether pooling is a
+   same-quarter routing change or a hiring/training project.
+2. **Pilot with the best pair, not all 4.** Re-solved pairwise through the same
+   Erlang engine (Jul BASE volumes):
+
+   | Pair | Inbound FTE saved | Chat FTE saved | Combined |
+   |---|---|---|---|
+   | Spanish + French | 10.3 | 8.6 | **18.8** |
+   | Italian + French | 10.3 | 8.6 | **18.8** |
+   | German + Italian | 10.3 | 8.6 | **18.8** |
+   | German + French | 5.1 | 12.8 | 17.9 |
+   | German + Spanish | 5.1 | 8.6 | 13.7 |
+   | Italian + Spanish | 10.3 | 4.3 | 14.6 |
+
+   Three pairs tie for the best combined saving. **Recommend Spanish + French**
+   over the other two: both Romance languages, so bilingual-agent availability
+   in BPO hiring markets is realistically higher than pairing with German.
+3. **Start on the overnight window**, where per-language floors are most
+   wasteful relative to actual volume — lowest customer-facing risk if the
+   pilot needs correcting. Note: the workbook only has monthly totals, not
+   hour-of-day volume, so an exact overnight-only FTE number needs an
+   intraday-volume data request; the *qualitative* case (low overnight volume,
+   still paying the full 80/20 floor) holds regardless.
+4. **Cost check — bilingual agents likely cost more per hour.** Pooling
+   Spanish+French needs ~54.8 FTE of pooled staff to capture the 18.8 FTE
+   saving. That implies a breakeven bilingual pay premium of **~34%**
+   (saving ÷ pooled headcount) before the saving is erased. Realistic
+   bilingual premiums in BPO markets run 5–15%, leaving a wide safety margin.
+5. **Gate the full 4-language rollout (−51.4 FTE) on the pilot's results** —
+   actual service level, misroute rate, and confirmed bilingual pay premium —
+   rather than committing to it upfront.
+
 ---
 
 ## 9. Task 1c — AI usage (write honestly)

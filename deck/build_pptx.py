@@ -332,40 +332,43 @@ def build_s4(prs):
                                "Two strategies the arithmetic supports — and one it kills")
     c1, c2, c3 = cols_for([40, 33, 27], by, bb)
 
-    H.h2(slide, c1, "Strategy 1 · Pool the four non-English queues −51.4 FTE now (10%)",
+    H.h2(slide, c1, "Strategy 1 · Pilot: pool Spanish + French −18.8 FTE",
          first=True)
     c1.advance(0.06)
     CH.hbar(slide, c1.x, c1.y, c1.w, 1.35,
-            ["German inb 42%", "Spanish inb 38%", "French inb 31%", "Italian inb 28%"],
-            [42, 38, 31, 28], [H.ACCENT] * 4, value_fmt="{:.0f}%", font_size=7.5, cat_font_size=7)
+            ["Spanish inb 38% (pilot)", "French inb 31% (pilot)", "Pooled inb 52% (pilot)",
+             "German inb 42% — phase 2", "Italian inb 28% — phase 2"],
+            [38, 31, 52, 42, 28], [H.ACCENT, H.ACCENT, H.GOOD, H.DEEMPH, H.DEEMPH],
+            value_fmt="{:.0f}%", font_size=7.5, cat_font_size=7)
     c1.advance(1.35 + 0.06)
     H.p(slide, c1, "<strong>The occupancy column is the finding.</strong> Those queues are not "
-                    "idle by choice — 80/20 on a queue of 0.84 erlangs, staffed 24/7, needs 3 "
-                    "seats no matter how few calls arrive. <strong>Four small queues pay that "
-                    "floor four times.</strong>", size=8.3)
+                    "idle by choice — 80/20 staffed 24/7 needs a minimum of 3 seats no matter how "
+                    "few calls arrive. <strong>Pilot on the two Romance-language queues first</strong> "
+                    "to prove the mechanism before committing to all four.", size=8.3)
     H.table(slide, c1,
             [("Queue", "t"), ("Siloed", "n"), ("Pooled", "n"), ("SL", "n"), ("Saved", "n")],
             [
-                [("Inbound DE/IT/ES/FR", "t", "b"), ("12 seats", "n"), ("7", "n", "b"), ("86%", "n", "good"), ("25.7", "n", "b")],
-                [("Chat DE/IT/ES/FR", "t", "b"), ("20 seats", "n"), ("14", "n", "b"), ("86%", "n", "good"), ("25.7", "n", "b")],
-                [("Total", "t"), ("", "n"), ("≈ 8,900 h off BPO 3", "t", "mute"), ("", "n"), ("51.4", "n")],
+                [("Inbound ES/FR", "t", "b"), ("6 seats", "n"), ("4", "n", "b"), ("83%", "n", "good"), ("10.3", "n", "b")],
+                [("Chat ES/FR", "t", "b"), ("8.3 seats", "n"), ("6.7", "n", "b"), ("86%", "n", "good"), ("8.6", "n", "b")],
+                [("Total", "t"), ("", "n"), ("≈ 3,260 h off BPO 3", "t", "mute"), ("", "n"), ("18.8", "n")],
             ], col_widths=[1.5, 0.8, 0.7, 0.6, 0.7], total_row_idx=2, row_h=0.22, font_size=7.8)
     y0 = H.note_open(c1)
-    H.h3(slide, c1, 'Phase 2 · Pool English in too <span class="accent">+27.4 FTE more</span>', size=9.5)
-    H.p(slide, c1, "Same mechanism, wider pool, re-solved the same way: <strong>Inbound</strong> "
-                    "23→16 seats (+10.3 FTE), <strong>Chat</strong> 37→28 seats "
-                    "(+17.1 FTE) — both still clear 80%. The catch: English sits in BPO 1/2, "
-                    "the other four in BPO 3, so this is <strong>vendor consolidation</strong>, "
-                    "not a routing change — a bigger lift than phase 1, worth "
-                    "<strong>−78.8 FTE (15.5%)</strong> total if it clears that bar.", size=8)
+    H.h3(slide, c1, 'Phase 2 · Add German + Italian, gated on pilot <span class="accent">up to −51.4 FTE total</span>', size=9.5)
+    H.p(slide, c1, "Extend only if the pilot holds: SLA stays ≥80%, misroute rate is low, and "
+                    "the bilingual pay premium comes in under the breakeven. Requires a "
+                    "<strong>BPO3 skills audit first</strong> — how many agents are already "
+                    "certified in 2+ of DE/IT/ES/FR — since pooling only works if routing can "
+                    "still match a caller to someone who speaks their language.", size=8)
     H.note_close(slide, c1, y0, kind="default")
 
     H.h2(slide, c2, "Why it works, and what it costs", first=True)
     H.p(slide, c2, "All four languages already sit in BPO 3, so this is a routing and skilling "
-                    "change, not a vendor change. Both pooled queues were <strong>re-solved "
-                    "through the same Erlang engine</strong> — the service level goes up, not "
-                    "down. Phase it: start with the overnight window, where the floors bite "
-                    "hardest.", size=8.6)
+                    "change, not a vendor change. The pilot pair was <strong>re-solved through "
+                    "the same Erlang engine</strong> — the service level goes up, not down. It "
+                    "starts on the <strong>overnight window</strong>, where the floors bite "
+                    "hardest and customer risk is lowest. Bilingual agents likely cost more per "
+                    "hour — the saving holds up to a <strong>~34% pay premium</strong> before it's "
+                    "erased; realistic premiums run 5–15%, a wide margin.", size=8.3)
     y0 = H.note_open(c2, gap_before=0.13)
     H.h3(slide, c2, "Tested and rejected: deflect phone → chat", size=9.8)
     H.p(slide, c2, "The intuitive lever. Modelled end-to-end it <strong>costs</strong> FTE, "

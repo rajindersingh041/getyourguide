@@ -317,9 +317,9 @@ dek:
 apx: false
 
 ---col:40%---
-<h2 style="font-size:13px; color:#0b0b0b">Strategy 1 · Pool the four non-English queues <span class="accent">−51.4 FTE now (10%)</span></h2>
-<img class="chart" src="figures/deck/s4-occupancy-pooling.svg" alt="chart" style="aspect-ratio:560/234">
-<p class="sm" style="margin-top:12px"><strong>The occupancy column is the finding.</strong> Those queues are not idle by choice — 80/20 on a queue of 0.84 erlangs, staffed 24/7, needs 3 seats no matter how few calls arrive. <strong>Four small queues pay that floor four times.</strong></p>
+<h2 style="font-size:13px; color:#0b0b0b">Strategy 1 · Pilot: pool Spanish + French <span class="accent">−18.8 FTE</span></h2>
+<img class="chart" src="figures/deck/s4-occupancy-pooling.svg" alt="chart" style="aspect-ratio:560/240">
+<p class="sm" style="margin-top:12px"><strong>The occupancy column is the finding.</strong> Those queues are not idle by choice — 80/20 staffed 24/7 needs a minimum of 3 seats no matter how few calls arrive. <strong>Pilot on the two Romance-language queues first</strong> to prove the mechanism before committing to all four.</p>
 <table style="margin-top:10px">
   <tr>
     <th>Queue</th>
@@ -329,33 +329,33 @@ apx: false
     <th class="n">Saved</th>
   </tr>
   <tr>
-    <td><strong>Inbound</strong> <span class="mute">DE IT ES FR</span></td>
-    <td class="n">12 seats</td>
-    <td class="n"><strong>7</strong></td>
-    <td class="n good">86%</td>
-    <td class="n"><strong>25.7</strong></td>
+    <td><strong>Inbound</strong> <span class="mute">ES FR</span></td>
+    <td class="n">6 seats</td>
+    <td class="n"><strong>4</strong></td>
+    <td class="n good">83%</td>
+    <td class="n"><strong>10.3</strong></td>
   </tr>
   <tr>
-    <td><strong>Chat</strong> <span class="mute">DE IT ES FR</span></td>
-    <td class="n">20 seats</td>
-    <td class="n"><strong>14</strong></td>
+    <td><strong>Chat</strong> <span class="mute">ES FR</span></td>
+    <td class="n">8.3 seats</td>
+    <td class="n"><strong>6.7</strong></td>
     <td class="n good">86%</td>
-    <td class="n"><strong>25.7</strong></td>
+    <td class="n"><strong>8.6</strong></td>
   </tr>
   <tr class="tot">
     <td>Total</td>
-    <td colspan="3" class="mute" style="font-weight:400">≈ 8,900 productive hours off the BPO 3 bill</td>
-    <td class="n">51.4</td>
+    <td colspan="3" class="mute" style="font-weight:400">≈ 3,260 productive hours off the BPO 3 bill</td>
+    <td class="n">18.8</td>
   </tr>
 </table>
 <div class="note" style="margin-top:9px">
-  <h3>Phase 2 · Pool English in too <span class="accent">+27.4 FTE more</span></h3>
-  <p class="sm tight">Same mechanism, wider pool, re-solved the same way: <strong>Inbound</strong> 23→16 seats (+10.3 FTE), <strong>Chat</strong> 37→28 seats (+17.1 FTE) — both still clear 80%. The catch: English sits in BPO 1/2, the other four in BPO 3, so this is <strong>vendor consolidation</strong>, not a routing change — a bigger lift than phase 1, worth <strong>−78.8 FTE (15.5%)</strong> total if it clears that bar.</p>
+  <h3>Phase 2 · Add German + Italian, gated on pilot <span class="accent">up to −51.4 FTE total</span></h3>
+  <p class="sm tight">Extend only if the pilot holds: SLA stays ≥80%, misroute rate is low, and the bilingual pay premium comes in under the breakeven (see right). Requires a <strong>BPO3 skills audit first</strong> — how many agents are already certified in 2+ of DE/IT/ES/FR — since pooling only works if routing can still match a caller to someone who speaks their language, not random cross-language routing.</p>
 </div>
 
 ---col:33%---
 <h2 style="font-size:14px; color:#0b0b0b">Why it works, and what it costs</h2>
-<p class="sm">All four languages already sit in BPO 3, so this is a routing and skilling change, not a vendor change. Both pooled queues were <strong>re-solved through the same Erlang engine</strong> — the service level goes up, not down. Phase it: start with the overnight window, where the floors bite hardest.</p>
+<p class="sm">All four languages already sit in BPO 3, so this is a routing and skilling change, not a vendor change. The pilot pair was <strong>re-solved through the same Erlang engine</strong> — the service level goes up, not down. It starts on the <strong>overnight window</strong>, where the floors bite hardest and customer risk is lowest. Bilingual agents likely cost more per hour — the saving holds up to a <strong>~34% pay premium</strong> before it's erased; realistic premiums run 5–15%, a wide margin.</p>
 <div class="note red" style="margin-top:13px">
   <h3>Tested and rejected: deflect phone → chat</h3>
   <p class="sm tight">The intuitive lever. Modelled end-to-end it <strong>costs</strong> FTE, because English chat consumes <strong>958 agent-seconds</strong> per contact against phone's <strong>458</strong>.</p>
